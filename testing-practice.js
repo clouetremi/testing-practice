@@ -1,4 +1,7 @@
-function sum(a, b) {
-    return a + b;
+// testing-practice.js
+
+function capitalize(string) {
+return string[0].toUpperCase() + string.slice(1); 
 }
-module.exports = sum; 
+
+module.exports = capitalize; 

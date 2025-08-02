@@ -1,5 +1,9 @@
-const sum = require("./testing-practice");
+// testing-practice.test.js
 
-test("adds 1 + 2 to equal 3", () => {
-    expect(sum(1, 2)).toBe(4); 
+const capitalize = require("./testing-practice");
+
+test("should capitalize the first letter of the word", () => {
+    const input = "bonjour";
+    const output = "Bonjour"; 
+    expect(capitalize(input)).toBe(output);
 });
