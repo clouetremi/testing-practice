@@ -1,6 +1,6 @@
 // testing-practice.test.js
 
-const { capitalize, reverseString, calculator } = require("./testing-practice");
+const { capitalize, reverseString, calculator, caesarCipher } = require("./testing-practice");
 
 test("should capitalize the first letter of the word", () => {
     const input = "bonjour";
@@ -30,3 +30,14 @@ test("should divide two numbers", () => {
     expect(calculator.divide(10, 5)).toBe(2);
 });
 
+test("should shift a string based on ceasar cipher", () => {
+    expect(caesarCipher("xyz", 3)).toBe("abc");
+});
+
+test("should follow the original letter case", () => {
+    expect(caesarCipher("HeLLo", 3)).toBe("KhOOr");
+})
+
+test("should keep punctuation", () => {
+    expect(caesarCipher("Hello, World!", 3)).toBe("Khoor, Zruog!");
+})
