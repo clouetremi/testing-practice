@@ -1,6 +1,7 @@
 // testing-practice.test.js
 
-const { capitalize, reverseString, calculator, caesarCipher } = require("./testing-practice");
+const { default: expect } = require("expect");
+const { capitalize, reverseString, calculator, caesarCipher, analyzeArray } = require("./testing-practice");
 
 test("should capitalize the first letter of the word", () => {
     const input = "bonjour";
@@ -40,4 +41,24 @@ test("should follow the original letter case", () => {
 
 test("should keep punctuation", () => {
     expect(caesarCipher("Hello, World!", 3)).toBe("Khoor, Zruog!");
+})
+
+test("should return the average", () => {
+const object = analyzeArray([1, 8, 3, 4, 2, 6]);
+expect(object.average).toBe(4);
+});
+
+test("should return the minimum value", () => {
+    const object = analyzeArray([1, 8, 3, 4, 2, 6]);
+    expect(object.min).toBe(1); 
+})
+
+test("should return the minimum value", () => {
+    const object = analyzeArray([1, 8, 3, 4, 2, 6]);
+    expect(object.max).toBe(8); 
+})
+
+test("should retrun an object with length property", () => {
+    const object = analyzeArray([1, 8, 3, 4, 2, 6]);
+    expect(object.length).toBe(6);
 })

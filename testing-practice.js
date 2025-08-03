@@ -1,5 +1,7 @@
 // testing-practice.js
 
+const { array } = require("yargs");
+
 function capitalize(string) {
     return string[0].toUpperCase() + string.slice(1);
 }
@@ -48,9 +50,32 @@ function caesarCipher(string, number) {
     return result;
 }
 
+function analyzeArray(arrayNumber) {
+
+    const result = arrayNumber.reduce((acc, val) => acc + val, 0);
+
+    const average = result / arrayNumber.length;
+    const min = Math.min(...arrayNumber);
+    const max = Math.max(...arrayNumber);
+    const length = arrayNumber.length; 
+
+
+    return {
+        average,
+        min,
+        max,
+        length
+    }; // retourne un objet
+
+}
+
+
+
+
 module.exports = {
     capitalize,
     reverseString,
     calculator,
-    caesarCipher
+    caesarCipher,
+    analyzeArray
 };
