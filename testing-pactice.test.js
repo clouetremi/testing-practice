@@ -1,6 +1,5 @@
 // testing-practice.test.js
 
-const { default: expect } = require("expect");
 const { capitalize, reverseString, calculator, caesarCipher, analyzeArray } = require("./testing-practice");
 
 test("should capitalize the first letter of the word", () => {
